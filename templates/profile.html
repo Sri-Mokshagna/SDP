@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  {% load static %}
+    <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  grid-gap: 120px;
+  padding: 10px;
+  margin : 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"><img  width="250px" height="70px"  src="{% static 'mysite/th1.png' %}"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="uploadadd/">upload add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="bold" href="pricing/">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="yourads/">Your Ads</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="yourpurchases/">Your purchases</a>
+      </li>
+
+    </ul>
+    <h3>Hello {{ username }}</h3>
+
+{% block content %}
+  </div>
+
+<form class="form-inline my-2 my-lg-0" method="post">
+  {% csrf_token %}
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ><a class="nav-link" href="/">Log out</a></button>
+    </form>
+</nav>
+
+<!--<div class="grid-container" >-->
+<!--  <div class="card" style="width: 18rem;">-->
+<!--  <img src={{im}} class="card-img-top" alt="...">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Perfume Trofen</h5>-->
+<!--    <p class="card-text">A Long lasting perfume</p>-->
+<!--  </div>-->
+<!--  <ul class="list-group list-group-flush">-->
+<!--    <li class="list-group-item">Deodrant Type</li>-->
+<!--    <li class="list-group-item">Type : Influencer</li>-->
+<!--    <li class="list-group-item">Influencer Name : Divyasnsh</li>-->
+<!--  </ul>-->
+
+<!--</div>-->
+<!--</div>-->
+<div class="container">
+  <div class="row">
+  <div class="card" style="width: 18rem;">
+  <img src="{% static 'mysite/add2.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Cook Mark</h5>
+    <p class="card-text">Samrt cook wear</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Food Utensils</li>
+    <li class="list-group-item">Type : Influencer</li>
+    <li class="list-group-item">Influencer Name : Saketh</li>
+  </ul>
+
+</div>
+  <div class="card" style="width: 18rem;">
+  <img src="{% static 'mysite/add3.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Painting Prock</h5>
+    <p class="card-text">Paint classic stiller</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Paint Great</li>
+    <li class="list-group-item">Type : Content Marketying</li>
+    <li class="list-group-item">Media : Instagram</li>
+  </ul>
+
+</div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

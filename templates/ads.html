@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My ads</title>
+    {% load static %}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  grid-gap: 120px;
+  padding: 10px;
+  margin : 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    {% for i in ads %}
+    <div class="container">
+  <div class="row">
+  <div class="card" style="width: 18rem;">
+<!--  <img src="{% static 'mysite/add2.png' %}" class="card-img-top" alt="...">-->
+  <div class="card-body">
+    <h5 class="card-title">{{ i.title }}</h5>
+    <p class="card-text">{{ i.description }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ i.title }}</li>
+    <li class="list-group-item">{{ i.username }}</li>
+<!--    <li class="list-group-item">Influencer Name : Saketh</li>-->
+  </ul>
+</div>
+  </div>
+</div>
+{% endfor %}
+</body>
+</html>
